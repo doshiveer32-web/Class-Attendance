@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promise Chaining Example</title>
+</head>
+<body>
+ 
+    <h2>Promise Chaining Example</h2>
+ 
+    <button onclick="runPromise()">Run Promise</button>
+ 
+    <h3>Output:</h3>
+    <div id="output"></div>
+ 
+    <script>
+ 
+        function runPromise() {
+ 
+            document.getElementById("output").innerHTML = "";
+ 
+            let promise = new Promise((resolve, reject) => {
+                resolve(10);
+            });
+ 
+            promise
+            .then(num => {
+                document.getElementById("output").innerHTML +=
+                    "Step 1: " + num + "<br>";
+ 
+                return num * 2;
+            })
+ 
+            .then(num => {
+                document.getElementById("output").innerHTML +=
+                    "Step 2: " + num + "<br>";
+ 
+                return num + 5;
+            })
+ 
+            .then(num => {
+                document.getElementById("output").innerHTML +=
+                    "<b>Final Result: " + num + "</b>";
+            })
+ 
+            .catch(error => {
+                document.getElementById("output").innerHTML =
+                    "Error: " + error;
+            });
+ 
+        }
+ 
+    </script>
+ 
+</body>
+</html>
