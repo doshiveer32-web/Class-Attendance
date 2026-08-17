@@ -24,7 +24,6 @@ let chart = new Chart(
     }
 );
 
-// Generate new attendance every 3 seconds
 setInterval(function () {
 
     let time = new Date();
@@ -32,19 +31,16 @@ setInterval(function () {
                       time.getMinutes() + ":" +
                       time.getSeconds();
 
-    // Generate attendance value
     let value = Math.floor(Math.random() * 41) + 10;
 
     labels.push(currentTime);
     attendance.push(value);
 
-    // Keep only latest 8 records
     if (labels.length > 8) {
         labels.shift();
         attendance.shift();
     }
 
-    // Update chart
     chart.update();
 
 }, 3000);
