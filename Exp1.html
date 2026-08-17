@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+</head>
+<body>
+
+    <h2>Student Form</h2>
+
+    <form onsubmit="return validate()">
+
+        Name:
+        <input type="text" id="name">
+        <br><br>
+
+        Mobile Number:
+        <input type="text" id="mobile">
+        <br><br>
+
+        Email ID:
+        <input type="text" id="email">
+        <br><br>
+
+        <input type="submit" value="Save Data">
+
+    </form>
+
+    <br>
+
+    <button onclick="viewData()">View Saved Data</button>
+
+    <button onclick="clearData()">Clear Saved Data</button>
+
+    <p id="message"></p>
+
+    <script src="form.js"></script>
+
+</body>
+</html>
